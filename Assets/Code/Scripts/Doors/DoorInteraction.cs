@@ -5,6 +5,8 @@ public class DoorInteraction : MonoBehaviour
     private DoorController[] doors;
     private bool isOpened = false;
 
+    public bool requiresKey = false;
+    public KeyName requiredKey;
     private void Start()
     {
         doors = GetComponentsInChildren<DoorController>();
@@ -12,12 +14,15 @@ public class DoorInteraction : MonoBehaviour
 
     public void OpenDoors()
     {
-        if (isOpened) return;  
+        if (isOpened) return;
 
-        isOpened = true;
-        foreach (DoorController controller in doors) 
+        if (!requiresKey || (requiresKey && PlayerInventory.HasKey(requiredKey.name)))
         {
-            controller.OpenDoor();
+            isOpened = true;
+            foreach (DoorController controller in doors)
+            {
+                controller.OpenDoor();
+            }
         }
     }
 }

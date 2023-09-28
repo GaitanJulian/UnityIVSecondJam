@@ -25,6 +25,12 @@ public class PlayerInteraction : MonoBehaviour
                     // Call the OpenDoors method of the DoorInteraction script
                     doorInteraction.OpenDoors();
                 }
+
+                KeyInteraction keyInteraction = hit.collider.GetComponent<KeyInteraction>();
+                if (keyInteraction != null) 
+                {
+                    keyInteraction.Addkey();
+                }
             }
         }
     }
