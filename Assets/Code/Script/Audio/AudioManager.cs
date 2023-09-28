@@ -6,8 +6,31 @@ public class AudioManager : MonoBehaviour
 {
     private static AudioManager instance;
 
-    [SerializeField] private AudioSource backgroundMusic;
-    [SerializeField] private AudioSource soundEffect;
+    [Header("Audio Source")]
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource soundEffectSource;
+    [SerializeField] private AudioSource footstepsSource;
+    [SerializeField] private AudioSource breathingSource;
+    [SerializeField] private AudioSource heartBeatingSource;
+    //[SerializeField] private AudioSource ambientSource;
+
+
+    [Header("Audio Clip")]
+    //public AudioClip clickSound;
+    //public AudioClip rollOver;
+    //public AudioClip switchSound;
+    public AudioClip musicBackground;
+
+    //public AudioClip jumpSound;
+    //public AudioClip dieSound;
+    //public AudioClip transformationSound;
+    //public AudioClip coinSound;
+
+    public AudioClip footstepsClip;
+    public AudioClip breathingClip;
+    public AudioClip heartBeatingClip;
+    //public AudioClip ambientClip;
+
 
     private void Awake()
     {
@@ -36,27 +59,43 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        musicSource.clip = musicBackground;
+        musicSource.Play();
+
+        heartBeatingSource.clip = footstepsClip;
+        heartBeatingSource.Play();
+
+        breathingSource.clip = breathingClip;
+        breathingSource.Play();
+
+        footstepsSource.clip = footstepsClip;  
+        footstepsSource.Play();
+
+    }
     public void PlayBackgroundMusic()
     {
-        if (!backgroundMusic.isPlaying)
+        if (!musicSource.isPlaying)
         {
-            backgroundMusic.Play();
+            musicSource.Play();
         }
     }
 
+
     public void StopBackgroundMusic()
     {
-        backgroundMusic.Stop();
+        musicSource.Stop();
     }
 
     public void PlaySoundEffect(AudioClip soundClip)
     {
-        soundEffect.clip = soundClip;
-        soundEffect.Play();
+        soundEffectSource.clip = soundClip;
+        soundEffectSource.Play();
     }
 
     public void StopSoundEffect()
     {
-        soundEffect.Stop();
+        soundEffectSource.Stop();
     }
 }
