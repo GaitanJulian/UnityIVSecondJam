@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("References")]
     public float moveSpeed;
-
     public float groundDrag;
 
     [Header("Ground Check")]
@@ -16,12 +17,18 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform orientation;
 
+    [Header("Candle")]
+    public CandleWobble candleWobbleScript;
+
     float horizontalInput;
     float verticalInput;
 
     Vector3 moveDirection;
 
     Rigidbody rb;
+
+    // TO DO: make this variable private
+    public float currentSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
 
         MyInput();
         SpeedControl();
+
+        currentSpeed = rb.velocity.magnitude;
+        candleWobbleScript.currentSpeed = AllowCandleWobble() ? currentSpeed : 0;
     }
 
     private void FixedUpdate()
@@ -82,5 +92,15 @@ public class PlayerMovement : MonoBehaviour
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
+    }
+
+    private bool AllowCandleWobble()
+    {
+        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        {
+            return true;
+        }
+
+        return true;
     }
 }
