@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 4789100}
   - component: {fileID: 4789099}
   - component: {fileID: 4789098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gatehouse_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9697,7 +9697,7 @@ GameObject:
   - component: {fileID: 236043813}
   - component: {fileID: 236043812}
   - component: {fileID: 236043811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bedroom_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12298,7 +12298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 283908202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map1stFloor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22441,7 +22441,7 @@ GameObject:
   - component: {fileID: 494478768}
   - component: {fileID: 494478767}
   - component: {fileID: 494478766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DayRoom_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24272,7 +24272,7 @@ GameObject:
   - component: {fileID: 541110173}
   - component: {fileID: 541110172}
   - component: {fileID: 541110171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26533,7 +26533,7 @@ GameObject:
   - component: {fileID: 597585688}
   - component: {fileID: 597585687}
   - component: {fileID: 597585686}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Surgery_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27067,7 +27067,7 @@ GameObject:
   - component: {fileID: 609154881}
   - component: {fileID: 609154880}
   - component: {fileID: 609154879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DiningRoom_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29389,7 +29389,7 @@ GameObject:
   - component: {fileID: 686244922}
   - component: {fileID: 686244921}
   - component: {fileID: 686244920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MachineRoom_stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34137,7 +34137,7 @@ GameObject:
   - component: {fileID: 785588885}
   - component: {fileID: 785588884}
   - component: {fileID: 785588883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MapFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38057,7 +38057,7 @@ GameObject:
   - component: {fileID: 905568318}
   - component: {fileID: 905568317}
   - component: {fileID: 905568316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bathroom_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46051,7 +46051,7 @@ GameObject:
   - component: {fileID: 1046224279}
   - component: {fileID: 1046224278}
   - component: {fileID: 1046224277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KitchenA_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47112,7 +47112,7 @@ GameObject:
   - component: {fileID: 1063242574}
   - component: {fileID: 1063242573}
   - component: {fileID: 1063242572}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ExamRoom_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47324,7 +47324,7 @@ GameObject:
   - component: {fileID: 1069844346}
   - component: {fileID: 1069844345}
   - component: {fileID: 1069844344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GuardRoom_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49105,7 +49105,7 @@ GameObject:
   - component: {fileID: 1100812552}
   - component: {fileID: 1100812551}
   - component: {fileID: 1100812550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Morgue_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60323,7 +60323,7 @@ GameObject:
   - component: {fileID: 1328293297}
   - component: {fileID: 1328293296}
   - component: {fileID: 1328293295}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Office_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60755,7 +60755,7 @@ GameObject:
   - component: {fileID: 1333334068}
   - component: {fileID: 1333334067}
   - component: {fileID: 1333334066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map1stFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64834,7 +64834,7 @@ GameObject:
   - component: {fileID: 1420913202}
   - component: {fileID: 1420913201}
   - component: {fileID: 1420913200}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OfficeA_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66561,7 +66561,7 @@ GameObject:
   - component: {fileID: 1454144897}
   - component: {fileID: 1454144896}
   - component: {fileID: 1454144895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HallUpstair_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68549,6 +68549,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1199890855624844, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208701777082780, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214653104742488, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1216266863708506, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -68558,6 +68570,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1289914571100508, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289914571100508, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -68565,9 +68581,17 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1361419134436952, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1382954170610396, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393213936603168, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1400527375685182, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -68593,6 +68617,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1532958464901426, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1535483741200714, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -68600,6 +68628,14 @@ PrefabInstance:
     - target: {fileID: 1561945452965442, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
       propertyPath: m_Name
       value: Asylum_BaseConstruction
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591805505906704, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661315828698740, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1666904216869656, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -68622,12 +68658,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1784726512776564, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784726512776564, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1826077080383304, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915755792783740, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1915755792783740, guid: a7f1b7c484b704d4686ba88de29f3a90, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -70682,7 +70726,7 @@ GameObject:
   - component: {fileID: 1538767155}
   - component: {fileID: 1538767154}
   - component: {fileID: 1538767153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ToiletsA_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74775,7 +74819,7 @@ GameObject:
   - component: {fileID: 1621250033}
   - component: {fileID: 1621250032}
   - component: {fileID: 1621250031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KitchenStock_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77690,7 +77734,7 @@ GameObject:
   - component: {fileID: 1678679093}
   - component: {fileID: 1678679092}
   - component: {fileID: 1678679091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MachineRoom_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78326,7 +78370,7 @@ GameObject:
   - component: {fileID: 1695121870}
   - component: {fileID: 1695121869}
   - component: {fileID: 1695121868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Toilets_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84276,7 +84320,7 @@ GameObject:
   - component: {fileID: 1827490178}
   - component: {fileID: 1827490177}
   - component: {fileID: 1827490176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map1stFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85354,7 +85398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1841110996}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MapGroundFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100177,7 +100221,7 @@ GameObject:
   - component: {fileID: 2138158857}
   - component: {fileID: 2138158856}
   - component: {fileID: 2138158855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MapFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100317,7 +100361,7 @@ GameObject:
   - component: {fileID: 2142749801}
   - component: {fileID: 2142749800}
   - component: {fileID: 2142749799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VisitRoom_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
