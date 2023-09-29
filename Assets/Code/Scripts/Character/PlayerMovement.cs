@@ -27,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
+    [Header("AudioManager")]
+    public AudioManager audioManager;
+
     Vector3 moveDirection;
 
     Rigidbody rb;
@@ -69,6 +72,8 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        bool isMoving = (horizontalInput != 0 || verticalInput != 0);
+        audioManager.isWalking(isMoving);
     }
 
     private void MovePlayer()
