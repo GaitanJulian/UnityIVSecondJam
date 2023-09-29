@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: SpawnRoomKey
   m_EditorClassIdentifier: 
   keyIdentifier: spawnRoom
+  roomName: Office
