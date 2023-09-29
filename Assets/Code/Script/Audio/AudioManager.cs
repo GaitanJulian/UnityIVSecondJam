@@ -12,7 +12,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource footstepsSource;
     [SerializeField] private AudioSource breathingSource;
     [SerializeField] private AudioSource heartBeatingSource;
-    [SerializeField] private AudioSource ambientSource;
+    [SerializeField] private AudioSource ambientStepSource;
+    [SerializeField] private AudioSource ambientDarkSource;
+    [SerializeField] private AudioSource ambientMusicSource;
     [SerializeField] private AudioSource noiseSourse;
 
 
@@ -35,12 +37,20 @@ public class AudioManager : MonoBehaviour
     //public AudioClip ambientClip;
 
 
-    [Header("Sound Clips")]
-    public AudioClip[] soundClips;
+    [Header("Sound Steps")]
+    public AudioClip[] stepsClips;
+    [Header("Sound of Music")]
+    public AudioClip[] muiscPartClips;
+    [Header("Sound Dark FX")]
+    public AudioClip[] darkNoisesClips;
 
 
-    private float minDelay = 8.0f;
-    private float maxDelay = 32.0f;
+    private float minDelayDark = 16.0f;
+    private float maxDelayDark = 64.0f;
+    private float minDelayStep = 8.0f;
+    private float maxDelayStep = 32.0f;
+    private float minDelayMusic = 8.0f;
+    private float maxDelayMusic = 16.0f;
 
 
     private void Awake()
@@ -57,7 +67,9 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        StartCoroutine(PlayRandomSounds());
+        StartCoroutine(PlayRandomSteps());
+        StartCoroutine(PlayRandomDarkNoises());
+        StartCoroutine(PlayRandomMusicPart());
     }
 
     public static AudioManager Instance
@@ -101,14 +113,36 @@ public class AudioManager : MonoBehaviour
 
     public void StopSoundEffect(){soundEffectSource.Stop();}
 
-    public void PlaySoundAmbient(AudioClip soundClip)
+    public void PlaySoundAmbient(AudioClip soundClip, int ambientSourceType)
     {
-        soundEffectSource.clip = soundClip;
-        soundEffectSource.Play();
-        soundEffectSource.loop = false;
+        
+        if (ambientSourceType == 0)
+        {
+            ambientStepSource.clip = soundClip;
+            ambientStepSource.Play();
+            ambientStepSource.loop = false;
+        }
+        if (ambientSourceType == 1)
+        {
+            ambientDarkSource.clip = soundClip;
+            ambientDarkSource.Play();
+            ambientDarkSource.loop = false;
+        }
+        if(ambientSourceType == 2)
+        {
+            ambientMusicSource.clip = soundClip;
+            ambientMusicSource.Play();
+            ambientMusicSource.loop = false;
+        }
     }
+    
 
-    public void StopSoundAmbient() { soundEffectSource.Stop(); }
+    public void StopSoundAmbient(int ambientSourceType) 
+    { 
+        if (ambientSourceType == 0) { ambientStepSource.Stop();}
+        if (ambientSourceType == 1) {ambientDarkSource.Stop();}
+        if (ambientSourceType == 2) {ambientMusicSource.Stop();}
+    }
 
     public void PlayStepSound()
     {
@@ -122,26 +156,70 @@ public class AudioManager : MonoBehaviour
 
     public void isWalking(bool Value) { if (!Value && footstepsSource.isPlaying) { StopStepSound(); } if (Value && !footstepsSource.isPlaying) { PlayStepSound(); } }
 
-    private IEnumerator PlayRandomSounds()
+    private IEnumerator PlayRandomSteps()
     {
         while (true) // Repetir indefinidamente
         {
             // Espera un tiempo aleatorio antes de reproducir el siguiente sonido
-            yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
+            yield return new WaitForSeconds(Random.Range(minDelayStep, maxDelayStep));
 
-            int randomIndex = Random.Range(0, soundClips.Length);
-            AudioClip randomClip = soundClips[randomIndex];
+            int randomIndex = Random.Range(0, stepsClips.Length);
+            AudioClip randomClip = stepsClips[randomIndex];
 
             // Modificar el nivel de paneo y la distancia de forma aleatoria
             float randomPan = Random.Range(-1f, 1f);
             float randomSpatialBlend = Random.Range(0f, 1f);
 
             // Configurar las propiedades de Audio Source
-            ambientSource.panStereo = randomPan;
-            ambientSource.spatialBlend = randomSpatialBlend;
+            ambientStepSource.panStereo = randomPan;
+            ambientStepSource.spatialBlend = randomSpatialBlend;
 
             // Reproducir el sonido aleatorio
-            PlaySoundAmbient(randomClip);
+            PlaySoundAmbient(randomClip, 0);
+        }
+    }
+    private IEnumerator PlayRandomDarkNoises()
+    {
+        while (true) // Repetir indefinidamente
+        {
+            // Espera un tiempo aleatorio antes de reproducir el siguiente sonido
+            yield return new WaitForSeconds(Random.Range(minDelayDark, maxDelayDark));
+
+            int randomIndex = Random.Range(0, darkNoisesClips.Length);
+            AudioClip randomClip = darkNoisesClips[randomIndex];
+
+            // Modificar el nivel de paneo y la distancia de forma aleatoria
+            float randomPan = Random.Range(-1f, 1f);
+            float randomSpatialBlend = Random.Range(0f, 1f);
+
+            // Configurar las propiedades de Audio Source
+            ambientDarkSource.panStereo = randomPan;
+            ambientDarkSource.spatialBlend = randomSpatialBlend;
+
+            // Reproducir el sonido aleatorio
+            PlaySoundAmbient(randomClip, 1);
+        }
+    }
+    private IEnumerator PlayRandomMusicPart()
+    {
+        while (true) // Repetir indefinidamente
+        {
+            // Espera un tiempo aleatorio antes de reproducir el siguiente sonido
+            yield return new WaitForSeconds(Random.Range(minDelayMusic, maxDelayMusic));
+
+            int randomIndex = Random.Range(0, muiscPartClips.Length);
+            AudioClip randomClip = muiscPartClips[randomIndex];
+
+            // Modificar el nivel de paneo y la distancia de forma aleatoria
+            float randomPan = Random.Range(-1f, 1f);
+            float randomSpatialBlend = Random.Range(0f, 1f);
+
+            // Configurar las propiedades de Audio Source
+            ambientMusicSource.panStereo = randomPan;
+            ambientMusicSource.spatialBlend = randomSpatialBlend;
+
+            // Reproducir el sonido aleatorio
+            PlaySoundAmbient(randomClip, 2);
         }
     }
 }
