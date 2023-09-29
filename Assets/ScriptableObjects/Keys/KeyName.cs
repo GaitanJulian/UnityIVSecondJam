@@ -4,4 +4,5 @@ using UnityEngine;
 public class KeyName : ScriptableObject
 {
     public string keyIdentifier;
+    public string roomName;
 }

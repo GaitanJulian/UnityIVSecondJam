@@ -1,9 +1,12 @@
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
     public float interactionDistance = 3f; // Adjust this as needed
     private Camera playerCamera; // Reference to the player's camera
+    private RaycastHit interactableHit;
+    private bool hasHit;
 
     // Define a delegate for interactable state changes
     public delegate void InteractableStateChanged(bool isInteractable);
@@ -18,6 +21,21 @@ public class PlayerInteraction : MonoBehaviour
     {
         // Continuously shoot the raycast
         ShootRaycast();
+        if (interactableHit.collider != null && Input.GetKeyDown(KeyCode.F) && hasHit)
+        {
+            DoorInteraction doorInteraction = interactableHit.collider.GetComponent<DoorInteraction>();
+            KeyInteraction keyInteraction = interactableHit.collider.GetComponent<KeyInteraction>();
+
+            if (doorInteraction != null)
+            {
+                    doorInteraction.OpenDoors();
+            }
+
+            if (keyInteraction != null)
+            {
+                    keyInteraction.Addkey();
+            }
+        }
     }
 
     void ShootRaycast()
@@ -26,8 +44,8 @@ public class PlayerInteraction : MonoBehaviour
         // Cast a ray from the camera's position in the forward direction
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, interactionDistance, LayerMask.GetMask("Interactable")))
         {
-            HandleInteraction(hit);
-
+            interactableHit = hit;
+            hasHit = true;
             // Notify subscribers (the UIManager) that the interactable state has changed
             if (OnInteractableStateChanged != null)
             {
@@ -36,6 +54,8 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
         {
+            hasHit = false;
+            
             // Notify subscribers (the UIManager) that the interactable state has changed
             if (OnInteractableStateChanged != null)
             {
