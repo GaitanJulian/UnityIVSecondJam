@@ -27,6 +27,9 @@ public class DoorInteraction : MonoBehaviour
         if (!requiresKey || (requiresKey && PlayerInventory.HasKey(requiredKey.name)))
         {
             isOpened = true;
+            // Display a message in the UI
+            string message = "Used " + requiredKey.roomName + " key";
+            UIManager.Instance.StartDisplayingMessage(message, 1f);
             foreach (DoorController controller in doors)
             {
                 controller.OpenDoor();
