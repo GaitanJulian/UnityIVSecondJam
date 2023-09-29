@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource breathingSource;
     [SerializeField] private AudioSource heartBeatingSource;
     [SerializeField] private AudioSource ambientSource;
+    [SerializeField] private AudioSource noiseSourse;
+
 
 
     [Header("Audio Clip")]
@@ -29,6 +31,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip footstepsClip;
     public AudioClip breathingClip;
     public AudioClip heartBeatingClip;
+    public AudioClip noiseClip;
     //public AudioClip ambientClip;
 
 
@@ -36,8 +39,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] soundClips;
 
 
-    private float minDelay = 4.0f;
-    private float maxDelay = 16.0f;
+    private float minDelay = 8.0f;
+    private float maxDelay = 32.0f;
 
 
     private void Awake()
@@ -73,6 +76,9 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.clip = musicBackground;
         musicSource.Play();
+
+        noiseSourse.clip = noiseClip;
+        noiseSourse.Play();
 
         heartBeatingSource.clip = heartBeatingClip;
         heartBeatingSource.Play();
