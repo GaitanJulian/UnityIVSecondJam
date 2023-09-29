@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource footstepsSource;
     [SerializeField] private AudioSource breathingSource;
     [SerializeField] private AudioSource heartBeatingSource;
-    //[SerializeField] private AudioSource ambientSource;
+    //[SerializeField] private AudioSource  ;
 
 
     [Header("Audio Clip")]
@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip footstepsClip;
     public AudioClip breathingClip;
     public AudioClip heartBeatingClip;
-    //public AudioClip ambientClip;
+    // public AudioClip ambientClip;
 
 
     private void Awake()
@@ -98,4 +98,12 @@ public class AudioManager : MonoBehaviour
     {
         soundEffectSource.Stop();
     }
+
+    public void BreathChange(AudioClip soundClip)
+    {
+        breathingSource.clip = soundClip;
+        soundEffectSource.Play();
+    }
+
+    
 }
