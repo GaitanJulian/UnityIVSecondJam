@@ -5889,6 +5889,7 @@ MonoBehaviour:
   requiresKey: 1
   requiredKey: {fileID: 11400000, guid: 8ce6feaadc9299f4484e1777a3b0c96d, type: 2}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: 80fa0a6af5d86b54b96f241ef5453fa3, type: 3}
 --- !u!1 &145182144
 GameObject:
   m_ObjectHideFlags: 0
@@ -9515,6 +9516,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!65 &212290579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11239,6 +11241,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &235981169
 GameObject:
   m_ObjectHideFlags: 0
@@ -16319,6 +16322,7 @@ MonoBehaviour:
   requiresKey: 1
   requiredKey: {fileID: 11400000, guid: 8ce6feaadc9299f4484e1777a3b0c96d, type: 2}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: 80fa0a6af5d86b54b96f241ef5453fa3, type: 3}
 --- !u!1 &325138942
 GameObject:
   m_ObjectHideFlags: 0
@@ -20491,6 +20495,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8c9d7ff2b5689db4bbdc8afa8cb22d6e,
         type: 2}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f04b1f5e5417648448f286d0741e9ca4, type: 3}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: bfd7aad47d8cc9b4087690271982a820, type: 3}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9505a50e8f4bae64c98282f0917dff69, type: 3}
     - target: {fileID: 2526857618324426094, guid: 05e314c9e067138498f7c1e1f6aca83d,
         type: 3}
       propertyPath: m_Layer
@@ -26418,6 +26442,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &518744601
 GameObject:
   m_ObjectHideFlags: 0
@@ -39538,6 +39563,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &790942910
 GameObject:
   m_ObjectHideFlags: 0
@@ -41853,6 +41879,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &836566267
 GameObject:
   m_ObjectHideFlags: 0
@@ -42341,6 +42368,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &849394242
 GameObject:
   m_ObjectHideFlags: 0
@@ -45882,6 +45910,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &933918476
 GameObject:
   m_ObjectHideFlags: 0
@@ -45953,6 +45982,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &934123303
 GameObject:
   m_ObjectHideFlags: 0
@@ -48149,6 +48179,7 @@ MonoBehaviour:
   requiresKey: 1
   requiredKey: {fileID: 11400000, guid: bb1b33001fd565c45974bc6d59983499, type: 2}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: 80fa0a6af5d86b54b96f241ef5453fa3, type: 3}
 --- !u!1 &970914771
 GameObject:
   m_ObjectHideFlags: 0
@@ -48578,6 +48609,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &983762763
 GameObject:
   m_ObjectHideFlags: 0
@@ -54186,6 +54218,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1001 &1059527812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57663,6 +57696,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!65 &1119003047
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61888,6 +61922,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &1192278587
 GameObject:
   m_ObjectHideFlags: 0
@@ -62383,6 +62418,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &1200491042
 GameObject:
   m_ObjectHideFlags: 0
@@ -64457,6 +64493,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &1241670592
 GameObject:
   m_ObjectHideFlags: 0
@@ -65921,6 +65958,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &1263792179
 GameObject:
   m_ObjectHideFlags: 0
@@ -68181,7 +68219,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 27f69a1ad2de2d440ac2be8d87a01e4f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -68225,7 +68263,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -70256,6 +70294,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &1354619836
 GameObject:
   m_ObjectHideFlags: 0
@@ -79108,6 +79147,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &1496187698
 GameObject:
   m_ObjectHideFlags: 0
@@ -91400,6 +91440,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8ce6feaadc9299f4484e1777a3b0c96d,
         type: 2}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f04b1f5e5417648448f286d0741e9ca4, type: 3}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: bfd7aad47d8cc9b4087690271982a820, type: 3}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9505a50e8f4bae64c98282f0917dff69, type: 3}
     - target: {fileID: 3445352999058701145, guid: 05e314c9e067138498f7c1e1f6aca83d,
         type: 3}
       propertyPath: m_Name
@@ -94226,6 +94286,7 @@ MonoBehaviour:
   requiresKey: 1
   requiredKey: {fileID: 11400000, guid: 8c9d7ff2b5689db4bbdc8afa8cb22d6e, type: 2}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: 80fa0a6af5d86b54b96f241ef5453fa3, type: 3}
 --- !u!65 &1784909875
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102810,6 +102871,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &1951008207
 GameObject:
   m_ObjectHideFlags: 0
@@ -102987,6 +103049,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &1953766740
 GameObject:
   m_ObjectHideFlags: 0
@@ -103284,6 +103347,7 @@ MonoBehaviour:
   requiresKey: 1
   requiredKey: {fileID: 11400000, guid: 38816ef9caf5e974d85e2fefba7c104c, type: 2}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: 80fa0a6af5d86b54b96f241ef5453fa3, type: 3}
 --- !u!1 &1959480948
 GameObject:
   m_ObjectHideFlags: 0
@@ -107191,6 +107255,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 38816ef9caf5e974d85e2fefba7c104c,
         type: 2}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f04b1f5e5417648448f286d0741e9ca4, type: 3}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: bfd7aad47d8cc9b4087690271982a820, type: 3}
+    - target: {fileID: 1197885959616174928, guid: 05e314c9e067138498f7c1e1f6aca83d,
+        type: 3}
+      propertyPath: keyPickupSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9505a50e8f4bae64c98282f0917dff69, type: 3}
     - target: {fileID: 3445352999058701145, guid: 05e314c9e067138498f7c1e1f6aca83d,
         type: 3}
       propertyPath: m_Name
@@ -112591,6 +112675,7 @@ MonoBehaviour:
   requiresKey: 0
   requiredKey: {fileID: 0}
   defaultLayer: Default
+  doorOpenSound: {fileID: 8300000, guid: a691749e1b4c3c34e9705e9306d1666b, type: 3}
 --- !u!1 &2123721424
 GameObject:
   m_ObjectHideFlags: 0

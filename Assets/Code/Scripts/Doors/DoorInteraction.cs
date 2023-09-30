@@ -9,6 +9,8 @@ public class DoorInteraction : MonoBehaviour
     public bool requiresKey = false;
     public KeyName requiredKey;
     public string defaultLayer = "Default";
+
+    public AudioClip doorOpenSound;
     private void Start()
     {
         doors = GetComponentsInChildren<DoorController>();
@@ -35,7 +37,13 @@ public class DoorInteraction : MonoBehaviour
                 string message = "Used " + requiredKey.roomName + " key";
                 UIManager.Instance.StartDisplayingMessage(message, 1f);
             }
-            
+
+            if (doorOpenSound != null)
+            {
+                AudioSource.PlayClipAtPoint(doorOpenSound, transform.position);
+            }
+
+
             foreach (DoorController controller in doors)
             {
                 controller.OpenDoor();
