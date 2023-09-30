@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3445352999058701222}
   - component: {fileID: 1197885959616174928}
   - component: {fileID: 3203127783931584884}
-  m_Layer: 0
-  m_Name: SmallKey_Rusty
+  m_Layer: 3
+  m_Name: key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

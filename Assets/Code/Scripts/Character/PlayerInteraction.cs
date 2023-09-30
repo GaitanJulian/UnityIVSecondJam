@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     private Camera playerCamera; // Reference to the player's camera
     private RaycastHit interactableHit;
     private bool hasHit;
-
+    private CandleFuel candeFuel;
     // Define a delegate for interactable state changes
     public delegate void InteractableStateChanged(bool isInteractable);
     public event InteractableStateChanged OnInteractableStateChanged;
@@ -15,6 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     void Start()
     {
         playerCamera = GetComponentInChildren<Camera>();
+        candeFuel = FindObjectOfType<CandleFuel>();
     }
 
     void Update()
@@ -34,6 +35,13 @@ public class PlayerInteraction : MonoBehaviour
             if (keyInteraction != null)
             {
                     keyInteraction.Addkey();
+            }
+
+            // Check if the hit object has the "Candle" tag
+            if (interactableHit.collider.CompareTag("Candle"))
+            {
+                candeFuel.RefillCandle();
+                Destroy(interactableHit.collider.gameObject);
             }
         }
     }
