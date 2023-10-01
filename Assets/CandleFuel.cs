@@ -22,9 +22,12 @@ public class CandleFuel : MonoBehaviour
     public Light candleLight;
     public GameObject candleParticles;
 
+    private UIManager manager;
+
     private void Start()
     {
         currentFuel = startFuel; // Initialize current fuel to maximum
+        manager = FindObjectOfType<UIManager>();
     }
 
     private void Update()
@@ -62,19 +65,28 @@ public class CandleFuel : MonoBehaviour
 
         candleTip.transform.position = topBodyCandle.position;
 
-        // Adjust the scale of the candle particles
-        if (candleParticles != null)
-        {
-            float newParticleScale = Mathf.Max(0.5f, 1f * normalizedFuel); // Minimum 0.5
-            candleParticles.transform.localScale = new Vector3(1f, newParticleScale, 1f);
-            candleParticles.transform.position = topBodyCandle.transform.position;
-        }
 
         // Adjust light range
+        /*
         if (candleLight != null)
         {
             float newLightRange = Mathf.Max(2.5f, 3.5f * normalizedFuel); // Minimum 2.5
             candleLight.range = newLightRange;
+        }
+        */
+
+        // Calculate light intensity based on normalizedFuel
+        if (candleLight != null)
+        {
+            // Define the minimum and maximum intensity values
+            float minIntensity = 0.1f;
+            float maxIntensity = 1.0f;
+
+            // Calculate the intensity based on normalizedFuel
+            float newIntensity = Mathf.Lerp(minIntensity, maxIntensity, normalizedFuel);
+
+            // Set the light intensity
+            candleLight.intensity = newIntensity;
         }
     }
  
@@ -82,6 +94,7 @@ public class CandleFuel : MonoBehaviour
     {
         candleParticles.SetActive(false);
         candleLight.gameObject.SetActive(false);
+        manager.HandleGameOver();
     }
 
     public void RefillCandle()

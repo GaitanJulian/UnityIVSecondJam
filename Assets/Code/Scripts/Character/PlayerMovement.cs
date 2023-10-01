@@ -78,8 +78,6 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        // Debug.Log(rb.velocity);
-        Debug.Log(OnSlope());
 
         // slope
         if (OnSlope())

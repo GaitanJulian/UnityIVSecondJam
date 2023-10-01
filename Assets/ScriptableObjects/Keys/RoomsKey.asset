@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RoomsKey
   m_EditorClassIdentifier: 
   keyIdentifier: roomsKey
-  roomName: doorms
+  roomName: doorm

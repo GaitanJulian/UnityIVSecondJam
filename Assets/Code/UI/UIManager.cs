@@ -9,6 +9,11 @@ public class UIManager : MonoBehaviour
     public GameObject messagePanel; // Reference to the message Panel
     public TextMeshProUGUI messageText;
 
+
+    public GameObject loseCanvas;
+    public Image darkScreen;
+    public GameObject loseText;
+
     // Singleton instance
     private static UIManager _instance;
     public static UIManager Instance { get { return _instance; } }
@@ -66,6 +71,36 @@ public class UIManager : MonoBehaviour
             StopCoroutine(messageCoroutine);
         }
         messageCoroutine = StartCoroutine(DisplayMessage(message, displayTime));
+    }
+
+    // Method to handle game over
+    public void HandleGameOver()
+    {
+        StartCoroutine(ShowGameOverOverlay());
+    }
+
+    private IEnumerator ShowGameOverOverlay()
+    {
+        // Activate the lose canvas
+        loseCanvas.SetActive(true);
+
+        // Smoothly transition the alpha of the dark screen image
+        float duration = 2.0f;
+        float startTime = Time.time;
+        Color startColor = darkScreen.color;
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 1.0f);
+
+        while (Time.time - startTime < duration)
+        {
+            float t = (Time.time - startTime) / duration;
+            darkScreen.color = Color.Lerp(startColor, targetColor, t);
+            yield return null;
+        }
+
+        darkScreen.color = targetColor; // Ensure the final alpha value
+
+        // Activate the lose text object
+        loseText.SetActive(true);
     }
 
 }
