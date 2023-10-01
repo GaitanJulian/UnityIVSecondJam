@@ -17,8 +17,6 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform orientation;
 
-    [Header("Slope Handling")]
-    public float maxSlopeAngle;
     private RaycastHit slopeHit;
 
     [Header("Candle")]
@@ -80,6 +78,9 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
+        // Debug.Log(rb.velocity);
+        Debug.Log(OnSlope());
+
         // slope
         if (OnSlope())
         {
@@ -87,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (rb.velocity.y > 0)
             {
-                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+                rb.AddForce(GetSlopeMoveDirection() * 50f, ForceMode.Force);
             }
         }
 
@@ -129,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
         {
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
-            return angle < maxSlopeAngle && angle != 0;
+            return angle < 45f && angle != 0;
         }
 
         return false;
