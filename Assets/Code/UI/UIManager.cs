@@ -2,17 +2,23 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using DG.Tweening;
 public class UIManager : MonoBehaviour
 {
     public GameObject interactPanel; // Reference to the interact UI element
     public GameObject messagePanel; // Reference to the message Panel
     public TextMeshProUGUI messageText;
 
-
-    public GameObject loseCanvas;
+    // lose Panel
+    public GameObject losePanel;
     public Image darkScreen;
     public GameObject loseText;
+
+    // Screamer Panel
+    public GameObject screamerPanel;
+    public Image screamer;
+
+    private Coroutine screamerCoroutine;
 
     // Singleton instance
     private static UIManager _instance;
@@ -21,6 +27,8 @@ public class UIManager : MonoBehaviour
     private PlayerInteraction playerInteraction;
 
     private Coroutine messageCoroutine; // Coroutine for displaying messages
+    
+    private AudioManager audioManager;
 
     private void Awake()
     {
@@ -35,6 +43,11 @@ public class UIManager : MonoBehaviour
         }
 
         playerInteraction = FindObjectOfType<PlayerInteraction>();
+    }
+
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void OnEnable()
@@ -82,7 +95,7 @@ public class UIManager : MonoBehaviour
     private IEnumerator ShowGameOverOverlay()
     {
         // Activate the lose canvas
-        loseCanvas.SetActive(true);
+        losePanel.SetActive(true);
 
         // Smoothly transition the alpha of the dark screen image
         float duration = 2.0f;
@@ -99,8 +112,39 @@ public class UIManager : MonoBehaviour
 
         darkScreen.color = targetColor; // Ensure the final alpha value
 
-        // Activate the lose text object
-        loseText.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        TriggerScreamer();
+    }
+
+    // Coroutine to show the screamer
+    // Method to trigger the screamer
+    public void TriggerScreamer()
+    {
+        // Activate the screamer panel
+        screamerPanel.SetActive(true);
+
+        // Play the scream sound effect
+        audioManager.PlaySoundEffect(audioManager.scream);
+
+        // Quickly fade in
+        screamer.DOFade(1.0f, 0.1f)
+            .OnComplete(() => StartCoroutine(FadeOutScreamer()));
+    }
+
+    private IEnumerator FadeOutScreamer()
+    {
+
+        // Slowly fade out
+        screamer.DOFade(0.0f, 2.0f)
+            .OnComplete(() => DeactivateScreamer());
+
+        yield return null;
+    }
+
+    private void DeactivateScreamer()
+    {
+        // Deactivate the screamer panel
+        screamerPanel.SetActive(false);
     }
 
 }

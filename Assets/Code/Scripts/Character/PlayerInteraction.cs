@@ -26,6 +26,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             DoorInteraction doorInteraction = interactableHit.collider.GetComponent<DoorInteraction>();
             KeyInteraction keyInteraction = interactableHit.collider.GetComponent<KeyInteraction>();
+            ScreamerEvent screamer = interactableHit.collider.GetComponent<ScreamerEvent>();
 
             if (doorInteraction != null)
             {
@@ -35,6 +36,11 @@ public class PlayerInteraction : MonoBehaviour
             if (keyInteraction != null)
             {
                     keyInteraction.Addkey();
+            }
+
+            if (screamer != null)
+            {
+                screamer.ActivateScreamer();
             }
 
             // Check if the hit object has the "Candle" tag

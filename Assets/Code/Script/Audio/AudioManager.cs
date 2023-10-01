@@ -34,6 +34,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip breathingClip;
     public AudioClip heartBeatingClip;
     public AudioClip noiseClip;
+
+    public AudioClip scream;
     //public AudioClip ambientClip;
 
 
@@ -43,6 +45,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] muiscPartClips;
     [Header("Sound Dark FX")]
     public AudioClip[] darkNoisesClips;
+
 
 
     private float minDelayDark = 16.0f;
