@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+
 public class UIManager : MonoBehaviour
 {
     public GameObject interactPanel; // Reference to the interact UI element
@@ -114,6 +116,7 @@ public class UIManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         TriggerScreamer();
+        Invoke("GoToMainMenu", 3f);
     }
 
     // Coroutine to show the screamer
@@ -147,4 +150,8 @@ public class UIManager : MonoBehaviour
         screamerPanel.SetActive(false);
     }
 
+    private void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
