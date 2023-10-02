@@ -6,6 +6,7 @@ public class ScreamerEvent : MonoBehaviour
 {
     private UIManager _manager;
     int defaultLayer;
+    bool hasBeenTriggered = false;
 
     private void Start()
     {
@@ -22,5 +23,15 @@ public class ScreamerEvent : MonoBehaviour
     private void ChangeLayer()
     {
         gameObject.layer = defaultLayer;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!hasBeenTriggered) 
+        {
+            ActivateScreamer();
+            hasBeenTriggered = true;
+        }
+        
     }
 }

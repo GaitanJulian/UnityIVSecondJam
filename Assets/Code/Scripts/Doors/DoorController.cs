@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    private Quaternion initialRotation;
-    private Quaternion targetRotation;
-    private bool isOpening = false;
+    protected Quaternion initialRotation;
+    protected Quaternion targetRotation;
+    protected bool isOpening = false;
 
     public float maxAngle = 90f;
     public float openSpeed = 2f;
 
-    void Start()
+    virtual protected void Start()
     {
         initialRotation = transform.rotation;
         targetRotation = initialRotation;
     }
 
-    public void OpenDoor()
+    virtual public void OpenDoor()
     {
         if (!isOpening)
         {

@@ -9,18 +9,16 @@ public class ZoneActiveFinalAnimation : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject finalAnimation;
 
+    public GameObject HUD;
 
-
-    private void OnTriggerEnter(Collider other)
+    public void ActivateAnimation()
     {
-        
-        if (other.CompareTag("Player"))
-        {
-            player.SetActive(false);
-            finalAnimation.SetActive(true);
-            Invoke("LoadNextScene", 58f);
-        }
+        player.SetActive(false);
+        finalAnimation.SetActive(true);
+        HUD.SetActive(false);
+        Invoke("LoadNextScene", 58f);
     }
+
 
     public void LoadNextScene()
     {
