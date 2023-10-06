@@ -83,11 +83,7 @@ public class PlayerMovement : MonoBehaviour
         if (OnSlope())
         {
             forceToAdd += GetSlopeMoveDirection() * moveSpeed;
-
-            if (rb.velocity.y > 0)
-            {
-                forceToAdd += GetSlopeMoveDirection() * 50f;
-            }
+            forceToAdd += GetSlopeMoveDirection() * 50f;
         }
         else
         {
