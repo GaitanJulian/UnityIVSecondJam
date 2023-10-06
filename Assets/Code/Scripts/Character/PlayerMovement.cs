@@ -78,29 +78,26 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
+        Vector3 forceToAdd = Vector3.zero;
 
-        // slope
         if (OnSlope())
         {
-            rb.AddForce(GetSlopeMoveDirection() * moveSpeed, ForceMode.Force);
+            forceToAdd += GetSlopeMoveDirection() * moveSpeed;
 
             if (rb.velocity.y > 0)
             {
-                rb.AddForce(GetSlopeMoveDirection() * 50f, ForceMode.Force);
+                forceToAdd += GetSlopeMoveDirection() * 50f;
             }
         }
-
-        if (grounded)
+        else
         {
-            rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
-        }
-        else if (!grounded)
-        {
-            rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
+            forceToAdd += 10f * moveSpeed * moveDirection.normalized;
         }
 
+        rb.AddForce(forceToAdd, ForceMode.Force);
         rb.useGravity = !OnSlope();
     }
+
 
     private void SpeedControl()
     {
