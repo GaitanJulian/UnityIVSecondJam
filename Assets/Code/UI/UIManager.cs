@@ -116,6 +116,7 @@ public class UIManager : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         TriggerScreamer();
+        PlayerInventory.ResetKeys();
         Invoke("GoToMainMenu", 3f);
     }
 

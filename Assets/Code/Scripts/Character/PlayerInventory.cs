@@ -14,4 +14,9 @@ public static class PlayerInventory
     {
         return keys.Exists(key => key.keyName.name == keyName);
     }
+
+    public static void ResetKeys()
+    {
+        keys.Clear();
+    }
 }
