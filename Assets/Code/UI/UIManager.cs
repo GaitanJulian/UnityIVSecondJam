@@ -138,7 +138,7 @@ public class UIManager : MonoBehaviour
     {
 
         // Slowly fade out
-        screamer.DOFade(0.0f, 2.0f)
+        screamer.DOFade(0.0f, 1.0f)
             .OnComplete(() => DeactivateScreamer());
 
         yield return null;
