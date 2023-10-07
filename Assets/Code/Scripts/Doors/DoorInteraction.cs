@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DoorInteraction : MonoBehaviour
+public class DoorInteraction : MonoBehaviour, IInteractable
 {
     private DoorController[] doors;
     private bool isOpened = false;
@@ -14,6 +14,16 @@ public class DoorInteraction : MonoBehaviour
     private void Start()
     {
         doors = GetComponentsInChildren<DoorController>();
+    }
+
+    public void Interact()
+    {
+        OpenDoors();
+    }
+
+    public void ToggleOutline(bool state)
+    {
+        // No outline for doors
     }
 
     public void OpenDoors()

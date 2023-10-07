@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BasementKey
   m_EditorClassIdentifier: 
   keyIdentifier: BasementKey
-  roomName: basement
+  roomName: Basement

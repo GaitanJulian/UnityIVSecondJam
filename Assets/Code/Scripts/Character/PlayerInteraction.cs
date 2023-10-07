@@ -30,12 +30,12 @@ public class PlayerInteraction : MonoBehaviour
 
             if (doorInteraction != null)
             {
-                    doorInteraction.OpenDoors();
+                    doorInteraction.Interact();
             }
 
             if (keyInteraction != null)
             {
-                    keyInteraction.Addkey();
+                    keyInteraction.Interact();
             }
 
             if (screamer != null)
@@ -58,27 +58,38 @@ public class PlayerInteraction : MonoBehaviour
         // Cast a ray from the camera's position in the forward direction
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, interactionDistance, LayerMask.GetMask("Interactable")))
         {
-            interactableHit = hit;
-            hasHit = true;
-            // Notify subscribers (the UIManager) that the interactable state has changed
-            if (OnInteractableStateChanged != null)
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
             {
-                OnInteractableStateChanged(true);
+                interactableHit = hit;
+                hasHit = true;
+                // Toggle the component ON for the object the player is looking at
+                interactable.ToggleOutline(true);
+                if (OnInteractableStateChanged != null)
+                {
+                    OnInteractableStateChanged(true);
+                }
             }
         }
         else
         {
+            if (hasHit && interactableHit.collider != null) // Check if the player was previously looking at an interactable
+            {
+                IInteractable previousInteractable = interactableHit.collider.GetComponent<IInteractable>();
+                if (previousInteractable != null)
+                {
+                    // Toggle the component OFF for the object the player was previously looking at
+                    previousInteractable.ToggleOutline(false);
+                }
+            }
             hasHit = false;
-            
-            // Notify subscribers (the UIManager) that the interactable state has changed
             if (OnInteractableStateChanged != null)
             {
                 OnInteractableStateChanged(false);
             }
         }
-
-
     }
+
 
     void HandleInteraction(RaycastHit hit)
     {

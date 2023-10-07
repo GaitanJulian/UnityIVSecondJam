@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: {fileID: 0}
+  keyPickupSounds: []
 --- !u!136 &3203127783931584884
 CapsuleCollider:
   m_ObjectHideFlags: 0

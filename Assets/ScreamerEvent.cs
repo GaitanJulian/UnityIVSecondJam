@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScreamerEvent : MonoBehaviour
+public class ScreamerEvent : MonoBehaviour, IInteractable
 {
     private UIManager _manager;
     int defaultLayer;
@@ -12,6 +12,16 @@ public class ScreamerEvent : MonoBehaviour
     {
         _manager = FindObjectOfType<UIManager>();
         defaultLayer   = LayerMask.NameToLayer("Default");
+    }
+
+    public void Interact ()
+    {
+        ActivateScreamer();
+    }
+
+    public void ToggleOutline(bool state)
+    {
+        // No outline for Screamers
     }
 
     public void ActivateScreamer()
