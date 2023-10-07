@@ -21,11 +21,6 @@ public class DoorInteraction : MonoBehaviour, IInteractable
         OpenDoors();
     }
 
-    public void ToggleOutline(bool state)
-    {
-        // No outline for doors
-    }
-
     public void OpenDoors()
     {
         if (isOpened) return;

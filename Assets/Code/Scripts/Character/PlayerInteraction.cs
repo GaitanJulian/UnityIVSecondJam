@@ -22,32 +22,13 @@ public class PlayerInteraction : MonoBehaviour
     {
         // Continuously shoot the raycast
         ShootRaycast();
+
         if (interactableHit.collider != null && Input.GetKeyDown(KeyCode.F) && hasHit)
         {
-            DoorInteraction doorInteraction = interactableHit.collider.GetComponent<DoorInteraction>();
-            KeyInteraction keyInteraction = interactableHit.collider.GetComponent<KeyInteraction>();
-            ScreamerEvent screamer = interactableHit.collider.GetComponent<ScreamerEvent>();
-
-            if (doorInteraction != null)
+            IInteractable interactable = interactableHit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
             {
-                    doorInteraction.Interact();
-            }
-
-            if (keyInteraction != null)
-            {
-                    keyInteraction.Interact();
-            }
-
-            if (screamer != null)
-            {
-                screamer.ActivateScreamer();
-            }
-
-            // Check if the hit object has the "Candle" tag
-            if (interactableHit.collider.CompareTag("Candle"))
-            {
-                candeFuel.RefillCandle();
-                Destroy(interactableHit.collider.gameObject);
+                interactable.Interact();
             }
         }
     }
@@ -55,7 +36,6 @@ public class PlayerInteraction : MonoBehaviour
     void ShootRaycast()
     {
         RaycastHit hit;
-        // Cast a ray from the camera's position in the forward direction
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, interactionDistance, LayerMask.GetMask("Interactable")))
         {
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
@@ -64,7 +44,8 @@ public class PlayerInteraction : MonoBehaviour
                 interactableHit = hit;
                 hasHit = true;
                 // Toggle the component ON for the object the player is looking at
-                interactable.ToggleOutline(true);
+                if (interactable is Interactable interactableOutline) interactableOutline.ToggleOutline(true);
+                
                 if (OnInteractableStateChanged != null)
                 {
                     OnInteractableStateChanged(true);
@@ -79,7 +60,7 @@ public class PlayerInteraction : MonoBehaviour
                 if (previousInteractable != null)
                 {
                     // Toggle the component OFF for the object the player was previously looking at
-                    previousInteractable.ToggleOutline(false);
+                    if (previousInteractable is Interactable interactableOutline) interactableOutline.ToggleOutline(false);
                 }
             }
             hasHit = false;

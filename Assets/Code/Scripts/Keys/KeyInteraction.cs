@@ -1,25 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyInteraction : MonoBehaviour, IInteractable 
+public class KeyInteraction : Interactable 
 {
     public KeyName keyName; // Unique identifier for the key
 
-    public Outline outline;
-
     public List<AudioClip> keyPickupSounds;
 
-    public void Interact()
+    public override void Interact()
     {
         Addkey();
-    }
-
-    public void ToggleOutline(bool state)
-    {
-        if (outline != null)
-        {
-            outline.enabled = state;
-        }
     }
 
     public void Addkey()

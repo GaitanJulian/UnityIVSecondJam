@@ -1,27 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CandleInteraction : MonoBehaviour, IInteractable
+public class CandleInteraction : Interactable
 {
     private CandleFuel candleFuel;
-    public Outline outline;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         candleFuel = FindObjectOfType<CandleFuel>();
     }
 
-    public void Interact()
+    public override void Interact()
     {
         RefillCandle();
-    }
-
-    public void ToggleOutline(bool state)
-    {
-        if (outline != null)
-        {
-            outline.enabled = state;
-        }
     }
 
     private void RefillCandle()

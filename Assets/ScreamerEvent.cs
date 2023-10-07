@@ -19,11 +19,6 @@ public class ScreamerEvent : MonoBehaviour, IInteractable
         ActivateScreamer();
     }
 
-    public void ToggleOutline(bool state)
-    {
-        // No outline for Screamers
-    }
-
     public void ActivateScreamer()
     {
         _manager.TriggerScreamer();
