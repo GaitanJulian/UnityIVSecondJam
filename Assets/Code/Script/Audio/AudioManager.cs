@@ -177,7 +177,7 @@ public class AudioManager : MonoBehaviour
 
                 // Configurar las propiedades de Audio Source
                 ambientStepSource.panStereo = randomPan;
-                ambientStepSource.spatialBlend = randomSpatialBlend;
+                //ambientStepSource.spatialBlend = randomSpatialBlend;
 
                 // Reproducir el sonido aleatorio
                 PlaySoundAmbient(randomClip, 0);
